@@ -16,11 +16,18 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $profiles = Profile::all();
 //        return response()->json($profiles, 201);
         return view('profile.index', compact('profiles'));
+    }
+
+    public function apiProfiles()
+    {
+        $profiles = Profile::all();
+        return response()->json($profiles, 201);
     }
 
     /**

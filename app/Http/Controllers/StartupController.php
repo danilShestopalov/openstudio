@@ -21,6 +21,12 @@ class StartupController extends Controller
         return view('startup.index', compact('startups'));
     }
 
+    public function apiStartups()
+    {
+        $startups = Startup::all();
+        return response()->json($startups, 201);
+
+    }
     /**
      * Show the form for creating a new resource.
      *

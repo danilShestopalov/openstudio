@@ -7,6 +7,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;
@@ -74,6 +75,9 @@ body {
   text-align: left;
   background-color: #f8fafc;
 }
+
+
+
 
 [tabindex="-1"]:focus {
   outline: 0 !important;

@@ -30,6 +30,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('startup/{startup}/like', 'StartupController@like');
 });
 
+Route::prefix('api')->group(function () {
+    Route::get('/profiles', 'ProfileController@apiProfiles');
+    Route::get('/startups', 'StartupController@apiStartups');
+});
+
 Route::get('/start', 'StartController@getJson');
 Auth::routes();
 
