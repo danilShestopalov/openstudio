@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/email', 'HomeController@email');
 
 Route::get('/investor', function () {
     return view('investor');
@@ -31,3 +32,5 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/start', 'StartController@getJson');
 Auth::routes();
+
+

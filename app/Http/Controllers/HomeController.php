@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function email(Request $request)
+    {
+//        $user = User::all();
+
+        return $request->email;
+    }
+
 }
