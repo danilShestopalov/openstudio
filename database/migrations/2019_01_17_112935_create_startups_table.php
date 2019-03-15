@@ -18,7 +18,6 @@ class CreateStartupsTable extends Migration
             $table->string('title');
             $table->text('info');
             $table->string('urls')->nullable();
-            $table->string('startup_image');
 
             $table->timestamps();
 

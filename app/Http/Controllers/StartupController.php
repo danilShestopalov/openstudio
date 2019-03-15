@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\StartupFile;
 use Illuminate\Support\Facades\Auth;
 use App\Startup;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class StartupController extends Controller
 {
@@ -34,7 +36,6 @@ class StartupController extends Controller
      */
     public function create()
     {
-
         return view('startup.create');
     }
 
@@ -46,22 +47,32 @@ class StartupController extends Controller
      */
     public function store(Request $request)
     {
-        $startup = new Startup();
-
         $this->validate($request,[
             'title'=>'required',
             'info'=>'required',
             'urls'=>'',
-            'startup_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $startup = Startup::create([
+            'title' => $request->title,
+            'info' => $request->info,
+            'urls' => $request->urls,
+            'creater_id' => Auth::id(),
         ]);
 
 
-        if ($request->hasFile('startup_image')) {
-            $imageName = time().'.'.$request->startup_image->getClientOriginalExtension();
-            $request->startup_image->move(public_path('uploads/startup/'), $imageName);
+        foreach ($request->file() as $file) {
+            foreach ($file as $f) {
+                $name = time().'_'.$f->getClientOriginalName();
+                StartupFile::create([
+                    'name' => $name,
+                    'startup_id' => $startup->id,
+                ]);
+                $f->move(storage_path('images'), $name);
+            }
         }
 
-        $startup->saveStartup($request, $imageName);
+
 
 //        return response()->json($profile, 201);
         return redirect('/startup')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
@@ -75,7 +86,6 @@ class StartupController extends Controller
      */
     public function show(Startup $startup)
     {
-//dd($startup);
         return view('startup.show', compact('startup'));
     }
 
@@ -102,26 +112,21 @@ class StartupController extends Controller
         $this->validate($request,[
             'title'=>'required',
             'info'=>'required',
-            'startup_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
         ]);
 
 
-        if ($request->hasFile('startup_image')) {
-            $imageName = time().'.'.$request->startup_image->getClientOriginalExtension();
-            $request->startup_image->move(public_path('uploads/startup/'), $imageName);
+        foreach ($request->file() as $file) {
+            foreach ($file as $f) {
+                $f->move(storage_path('images'), time().'_'.$f->getClientOriginalName());
+            }
         }
-
-        $startup->updateStartup($request, $imageName);
+//
+//        $startup->updateStartup($request, $imageName);
 //        return response()->json($request, 200);
         return redirect('/startup');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Profile  $profile
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Startup $startup)
     {
         $startup->delete();
@@ -129,11 +134,7 @@ class StartupController extends Controller
         return redirect('/startup');
     }
 
-    public function like(Startup $startup)
-    {
-        $startup->profiles()->attach(Auth::id());
-        return redirect('/startup/'.$startup->id);
-    }
+
 
 }
 

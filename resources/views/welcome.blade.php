@@ -1,177 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>OpenStudio</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
-
-    <!-- Custom styles for this template -->
-    <link href="css/new-age.css" rel="stylesheet">
-    <link href="css/cowboy.css" rel="stylesheet">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <script src="main.js"></script>
 </head>
-<body id="page-top">
-<header class="masthead">
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-lg-7 my-auto">
-                <div class="header-content mx-auto">
-                    <h1 class="mb-5">Looking for a startup team?</h1>
-                    <h3>We have created a platform for you to find your dream team.</h3> <br/>
-                    <a href="{{ route('register') }}"  class="btn btn-outline btn-xl js-scroll-trigger">search team</a>
-                </div>
-            </div>
-            <div class="col-lg-5 my-auto">
-                <div class="device-container">
-                    <div class="device-mockup iphone6_plus portrait white">
-                        <div class="device">
-                            <div class="screen">
-                                <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                <img src="img/iphone.png" class="img-fluid" alt="">
-                            </div>
-                            <div class="button">
-                                <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<body>
+<header>
+    <img src="img/OS.png" alt="" class="logo">
+    <div class="hrefs">
+        <a href="">Lorem ipsum</a>
+        <a href="">Lorem ipsum</a>
+        <a href="">Lorem ipsum</a>
+        <a href="">Lorem ipsum</a>
+        <a href="">Lorem ipsum</a>
+        <a href="">Lorem ipsum</a>
+    </div>
+    <button>Publish</button>
+</header>
+<section class="s1">
+    <div class="arts">
+        <div>
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div>
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div>
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div>
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
         </div>
     </div>
-</header>
-
-<main id="content" class="main-content">
-    <section class="section group section-feature">
-        <h2 class="visuallyhidden">Design meets technology</h2>
-        <article>
-            <div class="inner">
-                <h2>
-            <span style="overflow: visible;">
-              <span data-animation-delay="300" data-animation-type="slideUp" class="animated slideUp" data-triggered="true">
-                Share
-              </span>
-            </span>
-                    <br>
-                    <span style="overflow: visible;">
-              <span data-animation-delay="500" data-animation-type="slideUp" class="animated slideUp" data-triggered="true"><strong>experience</strong></span>
-            </span><br>
-                </h2>
-                <p data-animation-delay="400" data-animation-type="fadeIn" class="animated fadeIn" data-triggered="true">Join the community of experts willing to share their experiences.</p>
-            </div>
-        </article>
-        <aside>
-            <picture>
-                <img class="align-center parallax lazyloaded" src="img/imagethree.jpg" data-src="img/design-meets-technology-4K.jpg" alt="Design meets technology" style="margin-top: 26.1818px;">
-            </picture>
-        </aside>
-    </section>
-
-
-
-    <section class="section group section-feature">
-        <h2 class="visuallyhidden">More than an electric bike</h2>
-        <aside>
-            <picture>
-                <img class="align-center parallax lazyloaded" src="img/imagetwo.jpg" data-src="img/more-than-an-electric-bike.jpg" style="margin-top: 4.63636px;">
-            </picture>
-        </aside>
-        <article>
-            <div class="inner">
-                <h2>
-        <span style="overflow: visible;">
-          <span class="animated slideUp" data-animation-delay="300" data-animation-type="slideUp" data-triggered="true">Find</span>
-        </span>
-                    <span style="overflow: visible;"><span class="animated slideUp" data-animation-delay="700" data-animation-type="slideUp" data-triggered="true"><strong>confederate</strong></span></span></h2>
-                <p class="animated fadeIn" data-animation-delay="400" data-animation-type="fadeIn" data-triggered="true">Briefly tell about yourself and our algorithm will select the people you need.</p>
-            </div>
-        </article>
-    </section>
-
-    <section class="section group section-feature">
-        <h2 class="visuallyhidden">You'll never ride alone</h2>
-        <article>
-            <div class="inner">
-                <h2>
-          <span style="overflow: visible;">
-            <span class="animated slideUp" data-animation-delay="300" data-animation-type="slideUp" data-triggered="true">Create</span>
-          </span>
-
-
-                    <span style="overflow: visible;">
-          <span class="animated slideUp" data-animation-delay="700" data-animation-type="slideUp" data-triggered="true">
-            <strong>startups</strong>
-          </span>
-        </span>
-                </h2>
-                <p class="animated fadeIn" data-animation-delay="400" data-animation-type="fadeIn" data-triggered="true">Put your ideas to life with the help of your chosen team.</p>
-            </div>
-        </article>
-        <aside>
-            <picture>
-                <img class="align-center parallax lazyloaded" src="img/imageone1.jpg" data-src="img/more-than-an-electric-bike.jpg" style="margin-top: 4.63636px;" >
-            </picture>
-
-        </aside>
-    </section>
-</main>
-
-<header class="masthead">
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-lg-7 my-auto">
-                <div class="header-content mx-auto">
-                    <h1 class="mb-5">Find any people,
-                        </br>any level,
-                        </br>from anywhere!</h1>
-                    <h3>Its dangerous to go alone</h3> <br/>
-                    <a href="{{ route('register') }}" class="btn btn-outline btn-xl js-scroll-trigger">search team</a>
+    <div class="block2">
+        <ul>
+            <li>
+                <img src="img/fuck.png" alt="">
+                <div class="div1">
+                    <h1>Lorem, ipsum.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button>More</button>
                 </div>
-            </div>
-            <div class="col-lg-5 my-auto">
-                <div class="device-container">
-                    <div class="device-mockup iphone6_plus portrait white">
-                        <div class="device">
-                            <div class="screen">
-                                <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                <img src="img/iphone.png" class="jpg-fluid" alt="">
-                            </div>
-
-                        </div>
-                    </div>
+                <div class="div2">
+                    <span>55</span>
+                    <img src="img/poly.png" alt="">
                 </div>
+            </li>
+            <li>
+                <img src="img/fuck.png" alt="">
+                <div class="div1">
+                    <h1>Lorem, ipsum.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Подробнее</button>
+                </div>
+                <div class="div2">
+                    <span>55</span>
+                    <img src="img/poly.png" alt="">
+                </div>
+            </li>
+            <li>
+                <img src="img/fuck.png" alt="">
+                <div class="div1">
+                    <h1>Lorem, ipsum.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Подробнее</button>
+                </div>
+                <div class="div2">
+                    <span>55</span>
+                    <img src="img/poly.png" alt="">
+                </div>
+            </li>
+            <li>
+                <img src="img/fuck.png" alt="">
+                <div class="div1">
+                    <h1>Lorem, ipsum.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Подробнее</button>
+                </div>
+                <div class="div2">
+                    <span>55</span>
+                    <img src="img/poly.png" alt="">
+                </div>
+            </li>
+            <li>
+                <img src="img/fuck.png" alt="">
+                <div class="div1">
+                    <h1>Lorem, ipsum.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Подробнее</button>
+                </div>
+                <div class="div2">
+                    <span>55</span>
+                    <img src="img/poly.png" alt="">
+                </div>
+            </li>
+            <li>
+                <img src="img/fuck.png" alt="">
+                <div class="div1">
+                    <h1>Lorem, ipsum.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Подробнее</button>
+                </div>
+                <div class="div2">
+                    <span>55</span>
+                    <img src="img/poly.png" alt="">
+                </div>
+            </li>
+            <li>
+                <img src="img/fuck.png" alt="">
+                <div class="div1">
+                    <h1>Lorem, ipsum.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Подробнее</button>
+                </div>
+                <div class="div2">
+                    <span>55</span>
+                    <img src="img/poly.png" alt="">
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="s2">
+    <div>
+        <img src="img/1.png" alt="">
+        <h1>Startups</h1>
+        <p>Повседневная практика показывает, что дальнейшее</p>
+    </div>
+    <div>
+        <img src="img/2.png" alt="">
+        <h1>Startups</h1>
+        <p>Повседневная практика показывает, что дальнейшее</p>
+    </div>
+    <div>
+        <img src="img/3.png" alt="">
+        <h1>Startups</h1>
+        <p>Повседневная практика показывает, что дальнейшее</p>
+    </div>
+    <div>
+        <img src="img/4.png" alt="">
+        <h1>Startups</h1>
+        <p>Повседневная практика показывает, что дальнейшее</p>
+    </div>
+    <div>
+        <img src="img/5.png" alt="">
+        <h1>Startups</h1>
+        <p>Повседневная практика показывает, что дальнейшее</p>
+    </div>
+</section>
+<section class="s3">
+    <div class="partic">
+        <img src="img/rrr.png" alt="">
+        <img src="img/phone.png" alt="">
+    </div>
+    <div class="sect3-div">
+        <h1>OpenSTUDIO</h1>
+        <div class="s3grid">
+            <div>
+                <h1>340</h1>
+                <h2>Project</h2>
+            </div>
+            <div>
+                <h1>1800</h1>
+                <h2>Worker</h2>
+            </div>
+            <div>
+                <h1>99.9k</h1>
+                <h2>Money</h2>
             </div>
         </div>
+        <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют определения и уточнения направлений прогрессивного развития. Разнообразный и богатый опыт рамки и место обучения кадров требуют от нас анализа направлений прогрессивного развития. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют определения и уточнения направлений прогрессивного развития. Разнообразный и богатый опыт рамки и место обучения кадров требуют от нас анализа направлений прогрессивного развития.</p>
+        <button>More Us</button>
     </div>
-</header>
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for this template -->
-<script src="js/new-age.min.js"></script>
-
+</section>
+<section class="s4">
+    <img src="img/os2.png" alt="">
+    <ul>
+        <li>7 777 123 45 67</li>
+        <li>info@openstudio.com</li>
+        <li>117, st. Kazibek Bi, Almaty, KZ</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cumque corporis officia nisi delectus nulla ex aliquam, tenetur voluptas voluptatem, maxime accusantium inventore deserunt ipsam. Tempore quae unde incidunt quos?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, earum, quam aliquam ducimus labore neque accusantium ratione, delectus molestias a voluptates animi quas consequatur facere nam in iste! Error, voluptatibus.</p>
+</section>
 </body>
-
 </html>
-

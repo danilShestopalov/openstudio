@@ -17,15 +17,14 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+const files = require.context('./', true, /\.vue$/i)
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('ajax-component', require('./components/AjaxComponent.vue').default);
-Vue.component('chartline-component', require('./components/ChartlineComponent.vue').default);
-Vue.component('chartpie-component', require('./components/ChartpieComponent.vue').default);
-Vue.component('card-component', require('./components/CardComponent.vue').default);
-
+Vue.component('post-component', require('./components/PostBoxComponent.vue').default);
+Vue.component('q3-component', require('./components/Q3Component.vue').default);
+Vue.component('idea-component', require('./components/IdeaComponent.vue').default);
+Vue.component('image-upload', require('./components/ImageUploadComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
