@@ -21,6 +21,13 @@ class PostController extends Controller
         return view('post.index', compact('posts'));
     }
 
+    public function topPosts()
+    {
+        $posts = Post::take(4)->get();
+
+        return response()->json($posts,201);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -2,16 +2,17 @@
 
 namespace App;
 
+use App\Models\StartupComment;
 use App\Models\StartupFile;
 use Illuminate\Database\Eloquent\Model;
 
 class Startup extends Model
 {
     protected $fillable = [
-        'title', 'urls', 'info', 'creater_id',
+        'title', 'urls', 'info', 'creater_id', 'logo', 'link', 'tagline',
     ];
 
-    public function profiles()
+    public function users()
     {
         return $this->belongsToMany('App\Models\User', 'startup_profile',
             'startup_id', 'profile_id');
@@ -25,5 +26,10 @@ class Startup extends Model
     public function files()
     {
         return $this->hasMany('App\Models\StartupFile');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(StartupComment::class);
     }
 }

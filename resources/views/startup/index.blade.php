@@ -38,15 +38,15 @@
                         <button class="btn btn-warning">Update</button>
                     </form>
 
-                    <form action="/startup/{{ $value->id }}" method="post">
+                    <form action="{{ route('startup.destroy', $value->id) }}" method="post">
                         {!! method_field('delete') !!}
                         {{ csrf_field() }}
                         <button class="btn btn-danger" type="submit">Delete</button>
                     </form>
                         @else
-                        <form action="/startup/{{ $value->id }}/like" method="post">
+                        <form action="/api/startup/{{ $value->id }}/like" method="post">
                             {{ csrf_field() }}
-                            <button class="btn btn-succes" type="submit">like</button>
+                            <button class="btn btn-success" type="submit">like</button>
                         </form>
                     @endif
                 </td>

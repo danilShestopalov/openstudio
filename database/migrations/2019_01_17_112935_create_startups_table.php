@@ -17,7 +17,11 @@ class CreateStartupsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('info');
-            $table->string('urls')->nullable();
+            $table->string('link');
+            $table->string('logo');
+            $table->string('tagline');
+
+            $table->integer('likes')->default(0);
 
             $table->timestamps();
 

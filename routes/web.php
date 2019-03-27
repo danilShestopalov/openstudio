@@ -15,29 +15,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::resource('/blog', 'PostController');
+Route::post('/blog/{id}/comment', 'CommentController@store')->name('comment.store');
 Route::get('/investor', function () {
     return view('investor');
 });
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('profile', 'ProfileController');
-    Route::resource('startup', 'StartupController');
-    Route::get('idea', 'IdeaController@index')->name('idea.index');
-    Route::get('idea/create', 'IdeaController@create')->name('idea.create');
-    Route::get('idea/{idea}', 'IdeaController@show')->name('idea.show');
-    Route::post('idea', 'IdeaController@store')->name('idea.store');
-    Route::post('idea/{id}/like', 'IdeaController@like')->name('idea.like');
-    Route::post('/comment/create/{id}', 'ICommentController@store')->name('icomment.store');
-    Route::get('icomment/{id}', 'ICommentController@show');
-    Route::post('startup/{startup}/like', 'StartupController@like');
-    Route::post('file/upload/{id}/startup', 'StartupController@uploadStartupFile')->name('startup.fileUpload');
+    Route::group(['prefix' => 'startup'], function () {
+        Route::post('/comment/create/{id}', 'StartupController@storeComment')->name('startup.comment.store');
+    });
+
+    Route::resource('/startup', 'StartupController');
+
+    Route::prefix(['idea'], function () {
+        Route::get('/', 'IdeaController@index')->name('idea.index');
+        Route::get('/create', 'IdeaController@create')->name('idea.create');
+        Route::get('/{idea}', 'IdeaController@show')->name('idea.show');
+        Route::post('/', 'IdeaController@store')->name('idea.store');
+        Route::post('/{id}/like', 'IdeaController@like')->name('idea.like');
+        Route::post('/comment/create/{id}', 'ICommentController@store')->name('icomment.store');
+    });
+
+//    Route::resource('profile', 'ProfileController');
 });
 
-Route::get('/permission', 'Admin\PermissionController@index');
-Route::get('/permission/create', 'Admin\PermissionController@create');
-Route::post('/permission', 'Admin\PermissionController@store')->name('admin.permission.store');
+
+
 
 Route::get('/role', 'Admin\RoleController@index');
 Route::get('/role/create', 'Admin\RoleController@create');
@@ -54,12 +59,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function () {
 
 Route::prefix('api')->group(function () {
     Route::get('/profiles', 'ProfileController@apiProfiles');
-    Route::get('/startups', 'StartupController@apiStartups');
+    Route::get('/posts/top', 'PostController@topPosts');
+    Route::get('/startups/top', 'StartupController@topStartups');
+    Route::post('startup/{id}/like', 'StartupController@like');
     Route::get('/ideas', 'IdeaController@indexApi');
 });
 
-Route::resource('/blog', 'PostController');
-//Route::post('/icomment/create/{id}', 'CommentController@store')->name('comment.store');
 
 Auth::routes();
 

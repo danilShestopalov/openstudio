@@ -1,51 +1,62 @@
-{{--<html>--}}
-{{--<head>--}}
-
-    {{--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">--}}
-{{--</head>--}}
-@extends('layouts.app')
-
-@section('content')
-    <div class="container">
-
-        <div class="content">
-            <div class="m-b-md">
-               <h3 class="title"></h3>
-                @if (session('message'))
-                    <div class="success">
-                        {{ session('message') }}
-                    </div>
-                @endif
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>startup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css">
+    <script src="/js/main.js"></script>
+</head>
+<body>
+<section class="startup1">
+    <form action="{{ route('startup.store') }}" method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <h1>Tell us more about this product</h1>
+        <label for="prodname">Name</label>
+        <input type="text" name="title" placeholder="" id="prodname">
+        <label for="deviz">Tagline</label>
+        <input type="text" name="tagline" placeholder="" id="deviz">
+        <label for="desc">Project Description</label>
+        <input type="text" name="info" placeholder="" id="desc">
+        <label for="website">Project website</label>
+        <input type="text" name="link" placeholder="" id="website">
+        <label for="tags">Tags</label>
+        <input type="text" name="tags[]" placeholder="" id="tags">
+        <div class="picss">
+            <div>
+                <label for="">Logo</label>
+                <div>
+                    <input type="file" style="display: none" name="logo" id="logo">
+                    <svg width="108" height="90" onclick="document.getElementById('logo').click();" viewBox="0 0 108 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M98.2759 10H1.72414C0.772414 10 0 10.7774 0 11.7391V88.2609C0 89.2226 0.772414 90 1.72414 90H98.2759C99.2276 90 100 89.2226 100 88.2609V11.7391C100 10.7774 99.2276 10 98.2759 10ZM96.5517 86.5217H3.44828V13.4783H96.5517V86.5217Z" fill="black" fill-opacity="0.2"/>
+                        <path d="M27.5862 48.5009C32.881 48.5009 37.1879 44.1565 37.1879 38.8174C37.1879 33.4748 32.881 29.1304 27.5862 29.1304C22.2914 29.1304 17.9845 33.4748 17.9845 38.8157C17.9845 44.1565 22.2914 48.5009 27.5862 48.5009ZM27.5862 32.6087C30.9793 32.6087 33.7397 35.3948 33.7397 38.8157C33.7397 42.2365 30.9793 45.0226 27.5862 45.0226C24.1931 45.0226 21.4328 42.2383 21.4328 38.8174C21.4328 35.3965 24.1931 32.6087 27.5862 32.6087Z" fill="black" fill-opacity="0.2"/>
+                        <path d="M12.069 79.5652C12.4724 79.5652 12.8793 79.4226 13.2069 79.1322L41.3328 54.1548L59.0948 72.0696C59.769 72.7496 60.8586 72.7496 61.5328 72.0696C62.2069 71.3896 62.2069 70.2904 61.5328 69.6104L53.2448 61.2504L69.0741 43.7652L88.4897 61.7183C89.1914 62.367 90.2828 62.3183 90.9259 61.6104C91.569 60.9026 91.5224 59.8017 90.819 59.153L70.1293 40.0226C69.7914 39.7113 69.3414 39.5565 68.8879 39.567C68.431 39.5878 68 39.7913 67.6914 40.1322L50.8052 58.7878L42.6276 50.5391C41.9828 49.8904 40.9517 49.8574 40.269 50.4626L10.9293 76.52C10.2138 77.1548 10.1448 78.2539 10.7741 78.9756C11.1155 79.367 11.5914 79.5652 12.069 79.5652Z" fill="black" fill-opacity="0.2"/>
+                        <circle cx="98" cy="10" r="10" fill="#CCCCCC"/>
+                        <path d="M102.107 9.10714H99.0714C98.9728 9.10714 98.8929 9.02719 98.8929 8.92857V5.89286C98.8929 5.39978 98.4931 5 98 5C97.5069 5 97.1071 5.39978 97.1071 5.89286V8.92857C97.1071 9.02719 97.0272 9.10714 96.9286 9.10714H93.8929C93.3998 9.10714 93 9.50692 93 10C93 10.4931 93.3998 10.8929 93.8929 10.8929H96.9286C97.0272 10.8929 97.1071 10.9728 97.1071 11.0714V14.1071C97.1071 14.6002 97.5069 15 98 15C98.4931 15 98.8929 14.6002 98.8929 14.1071V11.0714C98.8929 10.9728 98.9728 10.8929 99.0714 10.8929H102.107C102.6 10.8929 103 10.4931 103 10C103 9.50692 102.6 9.10714 102.107 9.10714Z" fill="white"/>
+                    </svg>
+                    <h5>110x110<br> png | jpg | Max 2MB</h5>
+                </div>
+            </div>
+            <div>
+                <label for="">Photo project</label>
+                <div>
+                    <svg width="108" height="90" viewBox="0 0 108 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M98.2759 10H1.72414C0.772414 10 0 10.7774 0 11.7391V88.2609C0 89.2226 0.772414 90 1.72414 90H98.2759C99.2276 90 100 89.2226 100 88.2609V11.7391C100 10.7774 99.2276 10 98.2759 10ZM96.5517 86.5217H3.44828V13.4783H96.5517V86.5217Z" fill="black" fill-opacity="0.2"/>
+                        <path d="M27.5862 48.5009C32.881 48.5009 37.1879 44.1565 37.1879 38.8174C37.1879 33.4748 32.881 29.1304 27.5862 29.1304C22.2914 29.1304 17.9845 33.4748 17.9845 38.8157C17.9845 44.1565 22.2914 48.5009 27.5862 48.5009ZM27.5862 32.6087C30.9793 32.6087 33.7397 35.3948 33.7397 38.8157C33.7397 42.2365 30.9793 45.0226 27.5862 45.0226C24.1931 45.0226 21.4328 42.2383 21.4328 38.8174C21.4328 35.3965 24.1931 32.6087 27.5862 32.6087Z" fill="black" fill-opacity="0.2"/>
+                        <path d="M12.069 79.5652C12.4724 79.5652 12.8793 79.4226 13.2069 79.1322L41.3328 54.1548L59.0948 72.0696C59.769 72.7496 60.8586 72.7496 61.5328 72.0696C62.2069 71.3896 62.2069 70.2904 61.5328 69.6104L53.2448 61.2504L69.0741 43.7652L88.4897 61.7183C89.1914 62.367 90.2828 62.3183 90.9259 61.6104C91.569 60.9026 91.5224 59.8017 90.819 59.153L70.1293 40.0226C69.7914 39.7113 69.3414 39.5565 68.8879 39.567C68.431 39.5878 68 39.7913 67.6914 40.1322L50.8052 58.7878L42.6276 50.5391C41.9828 49.8904 40.9517 49.8574 40.269 50.4626L10.9293 76.52C10.2138 77.1548 10.1448 78.2539 10.7741 78.9756C11.1155 79.367 11.5914 79.5652 12.069 79.5652Z" fill="black" fill-opacity="0.2"/>
+                        <circle cx="98" cy="10" r="10" fill="#CCCCCC"/>
+                        <path d="M102.107 9.10714H99.0714C98.9728 9.10714 98.8929 9.02719 98.8929 8.92857V5.89286C98.8929 5.39978 98.4931 5 98 5C97.5069 5 97.1071 5.39978 97.1071 5.89286V8.92857C97.1071 9.02719 97.0272 9.10714 96.9286 9.10714H93.8929C93.3998 9.10714 93 9.50692 93 10C93 10.4931 93.3998 10.8929 93.8929 10.8929H96.9286C97.0272 10.8929 97.1071 10.9728 97.1071 11.0714V14.1071C97.1071 14.6002 97.5069 15 98 15C98.4931 15 98.8929 14.6002 98.8929 14.1071V11.0714C98.8929 10.9728 98.9728 10.8929 99.0714 10.8929H102.107C102.6 10.8929 103 10.4931 103 10C103 9.50692 102.6 9.10714 102.107 9.10714Z" fill="white"/>
+                    </svg>
+                    <h5>724x543<br> png | jpg | Max 5MB</h5>
+                </div>
             </div>
         </div>
-
-    <form action="/startup" method="post" enctype="multipart/form-data">
-
-        {{csrf_field()}}
-        <div class="form-group">
-            <label for="title">Title:</label>
-            <input class="form-control" type="text" name="title">
-        </div>
-
-
-        <div class="form-group">
-            <label for="intro">Info:</label>
-            <textarea class="form-control" type="text" name="info"></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="intro">Urls to projects:</label>
-            <textarea class="form-control" type="text" name="urls"></textarea>
-        </div>
-
-        <input type="file" multiple name="file[]">
-
-        <div class="form-group">
-            <button class="btn btn-primary" type="submit">Send</button>
-        </div>
-
+        <button>More project</button>
     </form>
-
+    <div class="musordiv2">
+        <img src="/assets/img/ins.png" alt="">
     </div>
-
-@endsection
+</section>
+</body>
+</html>

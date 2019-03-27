@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\StartupComment;
 use App\Models\StartupFile;
 use Illuminate\Support\Facades\Auth;
 use App\Startup;
@@ -23,41 +24,42 @@ class StartupController extends Controller
         return view('startup.index', compact('startups'));
     }
 
-    public function apiStartups()
+    public function topStartups()
     {
-        $startups = Startup::all();
+        $startups = Startup::latest()->get();
+
+
         return response()->json($startups, 201);
 
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('startup.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title'=>'required',
-            'info'=>'required',
-            'urls'=>'',
+            'title' => 'required',
+            'info' => 'required',
+            'tagline' => 'required',
+            'link' => 'required',
         ]);
+
+        $logo = '';
+        if ($request->hasFile('logo')) {
+            $logo = time().'.'.$request->logo->getClientOriginalExtension();
+            $request->logo->move(public_path('uploads/startup/logo'), $logo);
+        }
 
         $startup = Startup::create([
             'title' => $request->title,
             'info' => $request->info,
-            'urls' => $request->urls,
+            'tagline' => $request->tagline,
+            'link' => $request->link,
             'creater_id' => Auth::id(),
+            'logo' => $logo,
         ]);
 
 
@@ -72,41 +74,25 @@ class StartupController extends Controller
             }
         }
 
-
-
 //        return response()->json($profile, 201);
         return redirect('/startup')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Profile  $profile
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Startup $startup)
     {
-        return view('startup.show', compact('startup'));
+//        dd($startup->comments);
+        $comments = $startup->comments;
+        return view('startup.show', compact('startup', 'comments'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Profile  $profile
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Startup $startup)
     {
         return view('startup.edit', compact('startup'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Profile  $profile
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Startup $startup)
     {
         $this->validate($request,[
@@ -134,7 +120,43 @@ class StartupController extends Controller
         return redirect('/startup');
     }
 
+    public function like(Request $request, $id)
+    {
+        $startup = Startup::find($id);
 
+        if($startup->users != null) {
+            foreach ($startup->users as $profile) {
+                if (Auth::id() == $profile->id) {
+                    $startup->users()->detach(Auth::id());
+                    $startup->likes = $startup->likes-1;
+                    $startup->save();
+                    return $startup->likes;
 
+                }
+
+            }
+
+            $startup->users()->attach(Auth::id());
+            $startup->likes = $startup->likes+1;
+            $startup->save();
+        }
+
+        return $startup->likes;
+    }
+
+    public function storeComment(Request $request, $id)
+    {
+        $this->validate($request,[
+            'body' => 'required|max:155'
+        ]);
+
+        $startup = StartupComment::create([
+            'body' => $request->body,
+            'creator_id' => Auth::id(),
+            'startup_id' => $id
+        ]);
+
+        return redirect()->back();
+    }
 }
 
