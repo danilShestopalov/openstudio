@@ -6,8 +6,8 @@ header {
     background: #ffffff;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 10% 75% 15%;
-    grid-template-columns: 10% 75% 15%;
+    -ms-grid-columns: 5% 65% 25%;
+    grid-template-columns: 5% 65% 25%;
     height: 100px;
     padding: 0 10vw; }
 
@@ -24,12 +24,12 @@ header button {
 .hrefs {
     display: -ms-grid;
     display: grid;
-    width: 60%;
+    width: 90%;
     -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     -ms-grid-column-align: start;
     justify-self: start;
-    justify-items: start;
+    justify-items: center;
     -ms-grid-row-align: center;
     align-self: center; }
 
@@ -108,6 +108,7 @@ button {
     justify-self: start;
     -webkit-box-align: center;
     -ms-flex-align: center;
+    padding-left: 3%;
     align-items: center;
     justify-items: start; }
 
@@ -418,8 +419,9 @@ a {
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    font-size: 54px;
-    line-height: normal;
+    /* font-size: 54px; */
+    font-size: 3.5rem;
+    /* line-height: normal; */
     color: rgba(0, 0, 0, 0.65); }
 
 .projectt p {
@@ -459,8 +461,8 @@ a {
 .projectt .rightcol1 {
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 45% 35% 15%;
-    grid-template-rows: 45% 35% 15%;
+    -ms-grid-rows: 45% 35% 20%;
+    grid-template-rows: 45% 35% 20%;
     padding: 5%; }
 
 .projectt .slideshow-container {
@@ -503,20 +505,22 @@ a {
 .projectt .userinfo {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr; }
+    -ms-grid-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr; }
 
 .projectt .ava {
-    width: 60%; }
+    width: 100%; }
 
 .projectt .nut {
     display: -ms-grid;
     display: grid;
+    padding-left: 10%;
     -ms-grid-rows: auto;
-    grid-template-rows: auto; }
+    grid-template-rows: 1fr 1fr 1fr; }
 
 .projectt .nut p {
-    font-size: 24px; }
+    /* font-size: 24px; */
+    font-size: 1.5rem; }
 
 .projectt .bluebut {
     background: #23A4DD; }
@@ -541,9 +545,9 @@ a {
     grid-gap: 25px; }
 
 .projectt .rightcol1 p {
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center; }
+    -ms-flex-item-align: start;
+    -ms-grid-row-align: start;
+    align-self: start; }
 
 .projectt .recommend h2 {
     font-family: Roboto;
@@ -578,7 +582,8 @@ a {
     display: grid; }
 
 .projectt .text1 {
-    width: 90%; }
+    width: 90%;
+    padding-top: 5%; }
 
 .projectt .sect2 {
     display: -ms-grid;
@@ -586,20 +591,21 @@ a {
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr; }
 
-.projectt .search {
+.search {
     background: #F2F2F2;
     border-radius: 10px;
     margin: 5%;
     padding: 3%; }
 
-.projectt .search form {
+.search form {
     display: -ms-grid;
     display: grid;
+    margin-bottom: 1%;
     -ms-grid-columns: 10% 60% 20%;
     grid-template-columns: 10% 60% 20%;
     grid-gap: 10px; }
 
-.projectt .search input {
+.search input {
     border: 1px solid rgba(0, 0, 0, 0.35);
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -617,13 +623,13 @@ a {
     -ms-grid-row-align: center;
     align-self: center; }
 
-.projectt .search form button {
+.search form button {
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
     align-self: center;
     background: #23A4DD; }
 
-.projectt .specdiv {
+.specdiv{
     display: -ms-grid;
     display: grid;
     overflow: scroll;
@@ -631,14 +637,15 @@ a {
     grid-gap: 10px;
     padding-top: 10px; }
 
-.projectt .specblock {
+.specblock {
     background: #fff;
     padding: 2%;
     border-radius: 10px;
     display: -ms-grid;
+    height: 120px;
     display: grid; }
 
-.projectt .spectop {
+.spectop {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 10% 80% 10%;
@@ -664,16 +671,16 @@ a {
     -ms-grid-column-align: center;
     justify-self: center; }
 
-.projectt .like {
+.like {
     -ms-grid-column-align: end;
     justify-self: end; }
 
-.projectt .specblock p {
+.specblock p {
     padding-top: 3%;
     padding-bottom: 1%;
     width: 90%; }
 
-.projectt .morecomm {
+.morecomm {
     width: 100%;
     margin-top: 10px;
     background: #fff;
@@ -703,7 +710,7 @@ a {
     -ms-grid-columns: 20% 60% 20%;
     grid-template-columns: 20% 60% 20%; }
 
-.projectt ul  {
+.projectt ul {
     display: -ms-grid;
     display: grid;
     grid-gap: 10px;
@@ -842,4 +849,392 @@ a {
 }
 .startup1 .musordiv2{
     padding-left: 5%;
+}
+.projectimg{
+    width: 100%;
+}
+.prof{
+    background: url("/assets/img/obl.png");
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    padding: 1.5%;
+    margin: 0 10vw;
+}
+.prof img{
+    width: 100%;
+}
+.profinfo{
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    color: #fff;
+    font-family: Roboto;
+    padding-left: 2%;
+}
+.profinfo h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.profinfo p{
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+.under{
+    display: grid;
+    margin: 0 10vw;
+    grid-template-columns: 1fr 1fr;
+}
+.under .block2{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.post{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(65.75deg, #23A4DD 0%, #4EC8FF 100%);
+    padding-left: 10vw;
+    padding-right: 10vw;
+    background-size: cover;
+    padding-top: 5%;
+    min-height: 100vh;
+    padding-bottom: 5%;
+}
+.post form{
+    display: grid;
+    grid-template-rows: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 5%;
+    height: 60%;
+}
+.post h1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.65);
+}
+.post label{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.65);
+}
+.post button{
+    width: 50%;
+    align-self: end;
+    justify-self: end;
+}
+.post input{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.2);
+    padding-left: 3%;
+}
+.post label{
+    align-self: center;
+}
+.post .picss{
+    display: grid;
+    grid-template-columns: 1fr 1fr
+}
+.post .picss div{
+    display: grid;
+    /* grid-template-rows: 35% 65%; */
+}
+.post h5{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%;
+    align-self: end
+}
+.post svg:hover path{
+    fill: #23A4DD;
+    fill-opacity: 1;
+}
+.post svg:hover circle{
+    fill: #23A4DD;
+}
+.post .svg{
+    grid-template-columns: 35% 65%;
+}
+.post svg{
+    align-self: end
+}
+.postinfoimg{
+    /*background: url("/assets/img/postbg.png");*/
+    background-size: cover;
+    padding: 1.5%;
+    height: 35vh;
+    display: grid;
+    margin: 0 10vw;
+    border-radius: 0px 0px 10px 10px;
+}
+.postinfoimg div{
+    display: grid;
+    align-self: end;
+    font-family: Roboto;
+    grid-template-rows: auto;
+}
+.postinfoimg div h1{
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.postinfoimg div p{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+.pastila{
+    margin: 2% 10vw;
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 50px;
+}
+.pastila p{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 42px;
+    color: rgba(0, 0, 0, 0.65);
+}
+.pastila img{
+    width: 100%;
+}
+.subscr{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 1% 10vw;
+    grid-gap: 10px;
+    background: #23A4DD;
+}
+.subscr input{
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    padding-left: 3%;
+    font-family: Roboto;
+    height: 45px;
+}
+.subscr input::placeholder{
+    color: #fff;
+    font-family: Roboto;
+}
+.subscr h1{
+    align-self: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: normal;
+    color: rgba(255, 255, 255, 0.85);
+}
+.subscr button{
+    background: #fff;
+    height: 45px;
+    width: 100%;
+    color: #23A4DD;
+}
+.specblock h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.85); }
+
+.specblock h5 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.65); }
+
+.specblock form img {
+    -ms-grid-column-align: center;
+    justify-self: center; }
+.specblock p{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.65);
+}
+.formpost .spectop{
+    grid-template-columns: 5% 85% 5%;
+}
+.fullq{
+    justify-self: center;
+    /* width: 100%; */
+}
+.formpost .search form{
+    grid-template-columns: 5% 85% 10%;
+    padding: 0 1%;
+}
+.formpost .search form button{
+    width: 100%;
+    height: 35px;
+}
+.formpost .search form input{
+    height: 35px;
+    padding: 0;
+    color: #000;
+    padding-left: 2%;
+}
+.rate{
+    padding: 3% 10vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.rate h1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.65);
+}
+.socpost{
+    width: 30%;
+    display: grid;
+    justify-self: end;
+    justify-items: end;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+}
+.socpost::before{
+    content: 'Share';
+    font-family: Roboto;
+    font-style: normal;
+    position: relative;
+    top: -5px;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.65);
+}
+.formpost .search{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.sometext h1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    padding-bottom: 1%;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.65);
+}
+.sometext p{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.65);
+}
+.sometext{
+    padding: 3% 5%;
+    padding-bottom: 1%;
+    display: grid;
+    grid-template-rows: 20% 50% 30%;
+    height: 300px;
+}
+.tagsdiv{
+    padding: 2% 5%;
+    display: grid;
+    grid-template-rows: 20% 50% 30%;
+}
+.tagsdiv h1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    font-weight: 900;
+    padding-bottom: 1%;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.65);
+}
+.tagsdiv button{
+    background: #FFFFFF;
+    border: 1px solid #23A4DD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #23A4DD
+}
+.sometext::after{
+    font-weight: 900;
+    content: 'My Project';
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    align-self: end;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.65);
+}
+.tagsdiv::after{
+    content: 'Project';
+    font-weight: bold;
+    align-self: end;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.65);
+}
+.auth{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    display: none;
+}
+.green{
+    background: #A2C83A;
+}
+.authorized{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: normal;
+    grid-gap: 20px;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.65);
+}
+.authorized img{
+    width: 100%;
+}
+.authtitle{
+    align-self: center;
+}
+.authtitle p{
+    font-size: 10.7px;
+    padding-top: 2%;
 }

@@ -27,6 +27,7 @@ Vue.component('image-upload', require('./components/ImageUploadComponent.vue').d
 Vue.component('main-startup-list-component', require('./components/main/StartupsComponent.vue').default);
 // Vue.component('startup-list-component', require('./components/StartupsComponent.vue').default);
 Vue.component('main-post-list-component', require('./components/main/PostsComponent.vue').default);
+Vue.component('select-tags-component', require('./components/SelectTagsComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

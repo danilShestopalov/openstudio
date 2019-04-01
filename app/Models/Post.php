@@ -15,7 +15,7 @@ class Post extends Model
      */
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(PostComment::class);
     }
 
     /**
@@ -23,6 +23,6 @@ class Post extends Model
      */
     public function tags()
     {
-        return $this->belongsToMany('App\Models\Tag', 'post_tag', 'post_id', 'tag_id');
+        return $this->belongsToMany('App\Models\PostTag', 'posts_tags', 'post_id', 'tag_id');
     }
 }

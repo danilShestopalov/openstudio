@@ -6,29 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
+    protected $table = 'profiles';
+
+    protected $fillable = [
+        'nickname', 'avatar', 'user_id', 'contacts', 'about',
+    ];
+
     public function startups()
     {
         return $this->belongsToMany('App\Profile', 'startup_profile',
             'profile_id','startup_id');
     }
 
-    public function saveProfile($data, $imageName)
+    public function skills()
     {
-        $this->user_id = auth()->user()->id;
-        $this->firstname = $data['firstname'];
-        $this->lastname = $data['lastname'];
-        $this->info = $data['info'];
-        $this->urls = $data['urls'];
-        $this->image = $imageName;
-        $this->save();
+        return $this->belongsToMany('App\Models\ProfileSkill', 'profile_skill', 'profile_id', 'skill_id');
     }
-    public function updateProfile($data, $imageName)
+
+    public function professions()
     {
-        $this->firstname = $data['firstname'];
-        $this->lastname = $data['lastname'];
-        $this->info = $data['info'];
-        $this->urls = $data['urls'];
-        $this->image = $imageName;
-        $this->update();
+        return $this->belongsToMany('App\Models\ProfileProfession', 'profile_profession', 'profile_id', 'profession_id');
     }
 }

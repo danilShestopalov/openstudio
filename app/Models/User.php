@@ -43,4 +43,10 @@ class User extends Authenticatable
     {
         return in_array($check, array_pluck($this->roles->toArray(), 'name'));
     }
+
+    public function favoriteStartups()
+    {
+        return $this->belongsToMany('App\Startup', 'startup_profile',
+            'profile_id', 'startup_id');
+    }
 }

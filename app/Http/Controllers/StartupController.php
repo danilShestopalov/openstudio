@@ -144,6 +144,12 @@ class StartupController extends Controller
         return $startup->likes;
     }
 
+    public function favoriteStartups()
+    {
+        dd(Auth::user()->favoriteStartups());
+        return Auth::user()->favoriteStartups;
+    }
+
     public function storeComment(Request $request, $id)
     {
         $this->validate($request,[

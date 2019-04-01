@@ -2,23 +2,22 @@
 
 namespace App\Models;
 
-use App\User;
 use Illuminate\Database\Eloquent\Model;
 
-class IComment extends Model
+class PostComment extends Model
 {
     protected $fillable = [
-        'body', 'creator_id', 'idea_id'
+        'comment', 'creator_id', 'post_id'
     ];
     /**
      * Get comment's post
      */
-    public function idea()
-{
-    return $this->belongsTo(Idea::class);
-}
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
 
-    public function users()
+    public function creator()
     {
         return $this->belongsTo(User::class);
     }

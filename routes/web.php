@@ -15,19 +15,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/blog', 'PostController');
-Route::post('/blog/{id}/comment', 'CommentController@store')->name('comment.store');
+
+
 Route::get('/investor', function () {
     return view('investor');
 });
 
 
+
+
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::resource('/startup', 'StartupController');
     Route::group(['prefix' => 'startup'], function () {
         Route::post('/comment/create/{id}', 'StartupController@storeComment')->name('startup.comment.store');
     });
 
-    Route::resource('/startup', 'StartupController');
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/create', 'ProfileController@create')->name('profile.create');
+        Route::post('/', 'ProfileController@store')->name('profile.store');
+        Route::get('/{id}', 'ProfileController@show')->name('profile.show');
+    });
+
+    Route::group(['prefix' => 'post'], function () {
+        Route::get('/create', 'PostController@create')->name('post.create');
+        Route::post('/', 'PostController@store')->name('post.store');
+        Route::post('/{id}/comment', 'PostController@commentStore')->name('post.comment.store');
+    });
+
 
     Route::prefix(['idea'], function () {
         Route::get('/', 'IdeaController@index')->name('idea.index');
@@ -37,11 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/{id}/like', 'IdeaController@like')->name('idea.like');
         Route::post('/comment/create/{id}', 'ICommentController@store')->name('icomment.store');
     });
-
-//    Route::resource('profile', 'ProfileController');
 });
-
-
 
 
 Route::get('/role', 'Admin\RoleController@index');
@@ -59,17 +70,21 @@ Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function () {
 
 Route::prefix('api')->group(function () {
     Route::get('/profiles', 'ProfileController@apiProfiles');
+    Route::get('/profile/skills', 'ProfileController@skills');
+    Route::get('/profile/professions', 'ProfileController@professions');
     Route::get('/posts/top', 'PostController@topPosts');
     Route::get('/startups/top', 'StartupController@topStartups');
+    Route::get('/startups/favorite', 'StartupController@favoriteStartups');
     Route::post('startup/{id}/like', 'StartupController@like');
     Route::get('/ideas', 'IdeaController@indexApi');
+    Route::get('/post/tags', 'PostController@tags');
+
 });
 
+Route::get('post/{id}', 'PostController@show')->name('post.show');
 
 Auth::routes();
 
 
 
-//Auth::routes();
-//
-//Route::get('/home', 'HomeController@index')->name('home');
+

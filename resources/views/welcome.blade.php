@@ -19,18 +19,18 @@
 </head>
 <body>
 <div id="app">
-    <header>
-        <img src="img/OS.png" alt="" class="logo">
-        <div class="hrefs">
-            <a href="">Lorem ipsum</a>
-            <a href="">Lorem ipsum</a>
-            <a href="">Lorem ipsum</a>
-            <a href="">Lorem ipsum</a>
-            <a href="">Lorem ipsum</a>
-            <a href="">Lorem ipsum</a>
-        </div>
-        <button>Publish</button>
-    </header>
+    {{--<header>--}}
+        {{--<img src="img/OS.png" alt="" class="logo">--}}
+        {{--<div class="hrefs">--}}
+            {{--<a href="">Lorem ipsum</a>--}}
+            {{--<a href="">Lorem ipsum</a>--}}
+            {{--<a href="">Lorem ipsum</a>--}}
+            {{--<a href="">Lorem ipsum</a>--}}
+            {{--<a href="">Lorem ipsum</a>--}}
+            {{--<a href="">Lorem ipsum</a>--}}
+        {{--</div>--}}
+        {{--<button>Publish</button>--}}
+    {{--</header>--}}
 
     <section class="s1">
     <main-post-list-component></main-post-list-component>

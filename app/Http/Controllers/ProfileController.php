@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProfileProfession;
+use App\Models\ProfileSkill;
 use App\Profile;
 use App\Startup;
 use Illuminate\Http\Request;
@@ -48,28 +50,38 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request);
-        $profile = new Profile();
-
         $this->validate($request,[
-            'firstname'=> 'required',
-            'lastname'=>'required',
-            'info'=>'required',
-            'user_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-//            'urls' => ''
+//            'nickname'=> 'required|unique:profiles,nickname',
+            'about'=>'required',
+            'contacts' => 'required',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
         ]);
-//        dd($request);
 
-//        $request += ['user_id' => Auth::id()];
-
-        if ($request->hasFile('user_image')) {
-            $imageName = time().'.'.$request->user_image->getClientOriginalExtension();
-            $request->user_image->move(public_path('uploads/profile/'), $imageName);
+        if ($request->hasFile('avatar')) {
+            $imageName = time().'.'.$request->avatar->getClientOriginalExtension();
+            $request->avatar->move(public_path('uploads/profile/'), $imageName);
         }
 
-        $profile->saveProfile($request, $imageName);
-//        return response()->json($profile, 201);
-        return redirect('/profile')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
+        $profile = Profile::create([
+            'nickname' => $request->nickname,
+            'contacts' => $request->contacts,
+            'about' => $request->about,
+            'avatar' => $imageName,
+            'user_id' => Auth::id(),
+        ]);
+
+        foreach ($request->skills as $skill)
+        {
+            $profile->skills()->attach($skill);
+        }
+
+        foreach ($request->professions as $profession)
+        {
+            $profile->professions()->attach($profession);
+        }
+
+        return redirect(route('profile.show', $profile->id))->with('success', 'New support ticket has been created! Wait sometime to get resolved');
     }
 
     /**
@@ -78,10 +90,11 @@ class ProfileController extends Controller
      * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show($id)
     {
-
-        return view('profile.show', compact('profile'));
+        $profile = Profile::find($id);
+        $startups = Startup::where('creater_id', Auth::id())->get();
+        return view('profile.show', compact('profile', 'startups'));
     }
 
     /**
@@ -135,4 +148,13 @@ class ProfileController extends Controller
 //        return redirect('/profile');
     }
 
+    public function skills()
+    {
+        return response()->json(ProfileSkill::all(), 200);
+    }
+
+    public function professions()
+    {
+        return response()->json(ProfileProfession::all(), 200);
+    }
 }
