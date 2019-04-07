@@ -1,67 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31db5f68-60ed-4297-b83e-4c29da4298aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/img/morepost.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/post.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/jquery.fancybox.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.fancybox.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StartupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StartupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Startup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Startup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_130419_create_startup_profile_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_17_112925_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_17_112925_create_profiles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554088519.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554088603.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554088710.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554088823.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554088926.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554089032.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554089058.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554089073.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554089350.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554089417.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554089695.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554089711.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554089828.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554090637.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554090654.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554090722.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554090752.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554090838.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/1554091191.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/SelectTagsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/SelectTagsComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/StartupsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/StartupsComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/main/PostsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/main/PostsComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/main/StartupsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/main/StartupsComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/startup/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/startup/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/startup/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/startup/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/startup/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/startup/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-    </list>
+    <list default="true" id="31db5f68-60ed-4297-b83e-4c29da4298aa" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -577,7 +517,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -634,12 +574,12 @@
       <workItem from="1552211143868" duration="29654000" />
       <workItem from="1552886161477" duration="101562000" />
       <workItem from="1554408126446" duration="84000" />
-      <workItem from="1554437207935" duration="7279000" />
+      <workItem from="1554437207935" duration="7508000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270247000" />
+    <option name="totallyTimeSpent" value="270476000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -652,7 +592,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" sideWeight="0.50177306" side_tool="true" weight="0.20457797" />
