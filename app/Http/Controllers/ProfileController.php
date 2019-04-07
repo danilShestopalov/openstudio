@@ -50,27 +50,34 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+//        $this->validate($request,[
 //            'nickname'=> 'required|unique:profiles,nickname',
-            'about'=>'required',
-            'contacts' => 'required',
-            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
-        ]);
+//            'about'=>'required',
+//            'contacts' => 'required',
+//            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//            'background' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//
+//        ]);
 
         if ($request->hasFile('avatar')) {
-            $imageName = time().'.'.$request->avatar->getClientOriginalExtension();
-            $request->avatar->move(public_path('uploads/profile/'), $imageName);
+            $avatar = time().'.'.$request->avatar->getClientOriginalExtension();
+            $request->avatar->move(public_path('uploads/profile/avatar'), $avatar);
+        }
+
+        if ($request->hasFile('background')) {
+            $background = time().'.'.$request->background->getClientOriginalExtension();
+            $request->background->move(public_path('uploads/profile/background/'), $background);
         }
 
         $profile = Profile::create([
             'nickname' => $request->nickname,
             'contacts' => $request->contacts,
             'about' => $request->about,
-            'avatar' => $imageName,
+            'avatar' => $avatar,
+            'background' => $background,
             'user_id' => Auth::id(),
         ]);
-
+        dd($profile);
         foreach ($request->skills as $skill)
         {
             $profile->skills()->attach($skill);
@@ -80,8 +87,8 @@ class ProfileController extends Controller
         {
             $profile->professions()->attach($profession);
         }
-
-        return redirect(route('profile.show', $profile->id))->with('success', 'New support ticket has been created! Wait sometime to get resolved');
+dd($profile->skills);
+        return redirect(route('profile.show', $profile->id));
     }
 
     /**
@@ -90,9 +97,9 @@ class ProfileController extends Controller
      * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        $profile = Profile::find($id);
+        $profile = Auth::user()->profile;
         $startups = Startup::where('creater_id', Auth::id())->get();
         return view('profile.show', compact('profile', 'startups'));
     }

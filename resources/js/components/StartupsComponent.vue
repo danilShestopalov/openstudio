@@ -1,7 +1,7 @@
 <template>
         <ul>
         <li v-for="startup in startups">
-        <img :src="'uploads/startup/logo/'+ startup.logo" width="108px" height="108px"  alt="">
+        <img :src="'http://localhost:8000/uploads/startup/logo/'+ startup.logo" width="108px" height="108px"  alt="">
         <div class="projmid">
             <h1>{{ startup.title }}</h1>
             <p>{{ previewBody(startup.info) }}</p>
@@ -18,6 +18,9 @@
 
 <script>
     export default {
+        props: {
+            url: String,
+        },
         data: function() {
             return {
                 startups: [],
@@ -31,7 +34,7 @@
         },
         methods: {
             update: function() {
-                axios.get('http://localhost:8000/api/startups/top').then((response) => {
+                axios.get(this.url).then((response) => {
                     this.startups = response.data;
                 });
             },
@@ -48,14 +51,6 @@
                             this.startups[i]['likes'] = response.data;
                         }
                     }
-                });
-            },
-
-            getComments: function(id)  {
-                this.idea_class = 'idea_comments';
-                this.show_comments = true;
-                axios.get('/icomment/'+id).then((response) => {
-                    this.comments = response.data;
                 });
             },
         }

@@ -14,8 +14,8 @@ class Startup extends Model
 
     public function users()
     {
-        return $this->belongsToMany('App\Models\User', 'startup_profile',
-            'startup_id', 'profile_id');
+        return $this->belongsToMany('App\Models\User', 'startup_user',
+            'startup_id', 'user_id');
     }
 
     public function creater()

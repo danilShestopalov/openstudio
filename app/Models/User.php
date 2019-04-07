@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\IComment;
+use App\Profile;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -29,6 +30,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
     public function commentsIdea()
     {
         return $this->hasMany(IComment::class);
@@ -46,7 +52,7 @@ class User extends Authenticatable
 
     public function favoriteStartups()
     {
-        return $this->belongsToMany('App\Startup', 'startup_profile',
-            'profile_id', 'startup_id');
+        return $this->belongsToMany('App\Startup', 'startup_user',
+            'user_id', 'startup_id');
     }
 }

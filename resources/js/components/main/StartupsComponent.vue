@@ -43,7 +43,7 @@
             putLike: function(id) {
                 axios.post('/api/startup/'+ id + '/like').then((response) => {
                     for(let i = 0; i < this.startups.length; i++){
-                        console.log(this.startups[1]['id']);
+                        // console.log(this.startups[1]['id']);
                          if(this.startups[i]['id'] == id){
                             this.startups[i]['likes'] = response.data;
                         }

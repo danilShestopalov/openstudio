@@ -25,7 +25,7 @@ Vue.component('q3-component', require('./components/Q3Component.vue').default);
 Vue.component('idea-component', require('./components/IdeaComponent.vue').default);
 Vue.component('image-upload', require('./components/ImageUploadComponent.vue').default);
 Vue.component('main-startup-list-component', require('./components/main/StartupsComponent.vue').default);
-// Vue.component('startup-list-component', require('./components/StartupsComponent.vue').default);
+Vue.component('startup-list-component', require('./components/StartupsComponent.vue').default);
 Vue.component('main-post-list-component', require('./components/main/PostsComponent.vue').default);
 Vue.component('select-tags-component', require('./components/SelectTagsComponent.vue').default);
 

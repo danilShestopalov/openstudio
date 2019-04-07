@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStartupProfileTable extends Migration
+class CreateStartupUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateStartupProfileTable extends Migration
      */
     public function up()
     {
-        Schema::create('startup_profile', function (Blueprint $table)
-        {
-            $table->integer('profile_id')->unsigned();
+        Schema::create('startup_user', function (Blueprint $table) {
+            $table->integer('user_id')->unsigned();
             $table->integer('startup_id')->unsigned();
         });
     }
@@ -27,6 +26,6 @@ class CreateStartupProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('startup_profile');
+        Schema::dropIfExists('startup_user');
     }
 }

@@ -18,7 +18,8 @@ class CreateProfilesTable extends Migration
             $table->string('nickname');
             $table->text('about');
             $table->text('contacts');
-            $table->string('avatar');
+            $table->string('background')->nullable();
+            $table->string('avatar')->nullable();
             $table->timestamps();
 
             $table->integer('user_id')->unsigned();

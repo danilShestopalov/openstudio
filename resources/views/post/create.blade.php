@@ -10,7 +10,8 @@
                 <input type="text" placeholder="" name="title" id="prodname">
                 <label for="desc">Body</label>
                 <input type="text" placeholder="" name="body" id="desc">
-                <select-tags-component url="post"></select-tags-component>
+                <label for="desc">Tags</label>
+                <select-tags-component name="tags" url="/api/post/tags"></select-tags-component>
                 <div class="picss">
                     <div>
                         <label for="">Photo project</label>

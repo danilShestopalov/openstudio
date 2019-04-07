@@ -14,7 +14,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
@@ -22,13 +22,21 @@
 <body>
     <div id="app">
         <header>
-            <img src="/assets/img/OS.png" alt="" class="logo">
+            <a class="logo" href="/">
+                <img src="/assets/img/OS.png" alt="" class="logo">
+            </a>
             <div class="hrefs">
-                <a href="">Profile</a>
-                <a href="">Startup</a>
+                @if(Illuminate\Support\Facades\Auth::user())
+                    @if(\Illuminate\Support\Facades\Auth::user()->profile)
+                        <a href="{{ route('profile.show', \Illuminate\Support\Facades\Auth::id()) }}">Profile</a>
+                    @else
+                        <a href="{{ route('profile.create') }}">Profile</a>
+                    @endif
+                @endif
+                <a href="{{ route('startup.index') }}">Startup</a>
                 <a href="">Crowdfunding</a>
                 <a href="">Idea</a>
-                <a href="">Blog</a>
+                <a href="{{ route('post.index') }}">Blog</a>
             </div>
             @guest
             <div class="auth">
@@ -39,13 +47,19 @@
                 <button onclick="location.href='{{ route('login') }}';">Sign In</button>
             </div>
             @else
-            <div class="authorized">
-                <div class="authtitle">
-                    <h3>{{Auth::user()->name}}</h3>
+            {{--<div class="authorized">--}}
+                {{--<div class="authtitle">--}}
+                    {{--<h3>{{Auth::user()->name}}</h3>--}}
                     {{--<p>@f13dler.art</p>--}}
-                </div>
-                <img src="/assets/img/qatariq.png" alt="">
-            </div>
+                {{--</div>--}}
+                {{--<img src="/assets/img/qatariq.png" alt="">--}}
+            {{--</div>--}}
+                {{--<div class="authorized">--}}
+                <form class="authorized" action="{{ route('logout') }}" method="POST">
+                @csrf
+                    <button>Logout</button>
+                </form>
+                {{--</div>--}}
             @endguest
         </header>
         {{--<nav class="navbar navbar-expand-md navbar-light navbar-laravel">--}}

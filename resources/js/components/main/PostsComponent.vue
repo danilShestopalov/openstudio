@@ -1,11 +1,10 @@
 <template>
-    <div>
+
     <div class="arts" >
         <div v-for="post in posts"  :style="{ backgroundImage: 'url(' + '/uploads/posts/' + post.image + ')' }">
             <h1>{{ post.title }}</h1>
             <p>{{ previewBody(post.body) }}</p>
         </div>
-    </div>
     </div>
 </template>
 

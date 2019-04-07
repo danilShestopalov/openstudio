@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>startup</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css">
-    <script src="/js/main.js"></script>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
 <section class="startup1">
     <form action="{{ route('startup.store') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
@@ -23,6 +15,7 @@
         <input type="text" name="link" placeholder="" id="website">
         <label for="tags">Tags</label>
         <input type="text" name="tags[]" placeholder="" id="tags">
+       <select-tags-component></select-tags-component>
         <div class="picss">
             <div>
                 <label for="">Logo</label>
@@ -58,5 +51,4 @@
         <img src="/assets/img/ins.png" alt="">
     </div>
 </section>
-</body>
-</html>
+@endsection

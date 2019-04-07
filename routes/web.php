@@ -26,18 +26,23 @@ Route::get('/investor', function () {
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::resource('/startup', 'StartupController');
     Route::group(['prefix' => 'startup'], function () {
+        Route::get('/', 'StartupController@index')->name('startup.index');
+        Route::get('/create', 'StartupController@create')->name('startup.create');
+        Route::post('/', 'StartupController@store')->name('startup.store');
+        Route::get('/{id}', 'StartupController@show')->name('startup.show');
         Route::post('/comment/create/{id}', 'StartupController@storeComment')->name('startup.comment.store');
     });
 
     Route::group(['prefix' => 'profile'], function () {
+        Route::get('/', 'ProfileController@index')->name('profile.index');
         Route::get('/create', 'ProfileController@create')->name('profile.create');
         Route::post('/', 'ProfileController@store')->name('profile.store');
         Route::get('/{id}', 'ProfileController@show')->name('profile.show');
     });
 
     Route::group(['prefix' => 'post'], function () {
+        Route::get('/', 'PostController@index')->name('post.index');
         Route::get('/create', 'PostController@create')->name('post.create');
         Route::post('/', 'PostController@store')->name('post.store');
         Route::post('/{id}/comment', 'PostController@commentStore')->name('post.comment.store');
@@ -54,18 +59,18 @@ Route::group(['middleware' => 'auth'], function () {
     });
 });
 
-
-Route::get('/role', 'Admin\RoleController@index');
-Route::get('/role/create', 'Admin\RoleController@create');
-Route::post('/role', 'Admin\RoleController@store')->name('admin.role.store');
-
-Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function () {
-    Route::get('idea', 'Admin\IdeaController@index')->name('admin.idea.index');
-    Route::patch('idea/{idea}', 'Admin\IdeaController@update')->name('admin.idea.update');
-    Route::get('idea/{idea}', 'Admin\IdeaController@edit')->name('admin.idea.edit');
-    Route::delete('idea/{idea}', 'Admin\IdeaController@destroy')->name('admin.idea.destroy');
-    Route::post('idea/{id}/approve', 'Admin\IdeaController@approve')->name('admin.idea.approve');
-});
+//
+//Route::get('/role', 'Admin\RoleController@index');
+//Route::get('/role/create', 'Admin\RoleController@create');
+//Route::post('/role', 'Admin\RoleController@store')->name('admin.role.store');
+//
+//Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function () {
+//    Route::get('idea', 'Admin\IdeaController@index')->name('admin.idea.index');
+//    Route::patch('idea/{idea}', 'Admin\IdeaController@update')->name('admin.idea.update');
+//    Route::get('idea/{idea}', 'Admin\IdeaController@edit')->name('admin.idea.edit');
+//    Route::delete('idea/{idea}', 'Admin\IdeaController@destroy')->name('admin.idea.destroy');
+//    Route::post('idea/{id}/approve', 'Admin\IdeaController@approve')->name('admin.idea.approve');
+//});
 
 
 Route::prefix('api')->group(function () {

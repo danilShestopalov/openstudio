@@ -20,17 +20,9 @@ class StartupController extends Controller
     public function index()
     {
         $startups = Startup::all();
+//        dd($startups);
 //        return response()->json($startups, 201);
         return view('startup.index', compact('startups'));
-    }
-
-    public function topStartups()
-    {
-        $startups = Startup::latest()->get();
-
-
-        return response()->json($startups, 201);
-
     }
 
     public function create()
@@ -53,6 +45,12 @@ class StartupController extends Controller
             $request->logo->move(public_path('uploads/startup/logo'), $logo);
         }
 
+        $background = '';
+        if ($request->hasFile('background')) {
+            $background = time().'.'.$request->background->getClientOriginalExtension();
+            $request->background->move(public_path('uploads/startup/logo'), $background);
+        }
+
         $startup = Startup::create([
             'title' => $request->title,
             'info' => $request->info,
@@ -60,6 +58,7 @@ class StartupController extends Controller
             'link' => $request->link,
             'creater_id' => Auth::id(),
             'logo' => $logo,
+            'background' => $background,
         ]);
 
 
@@ -124,31 +123,40 @@ class StartupController extends Controller
     {
         $startup = Startup::find($id);
 
-        if($startup->users != null) {
-            foreach ($startup->users as $profile) {
-                if (Auth::id() == $profile->id) {
-                    $startup->users()->detach(Auth::id());
-                    $startup->likes = $startup->likes-1;
-                    $startup->save();
-                    return $startup->likes;
+        if(Auth::check()) {
+            if ($startup->users != null) {
+                foreach ($startup->users as $profile) {
+                    if (Auth::id() == $profile->id) {
+                        $startup->users()->detach(Auth::id());
+                        $startup->likes = $startup->likes - 1;
+                        $startup->save();
+                        return $startup->likes;
+
+                    }
 
                 }
 
+                $startup->users()->attach(Auth::id());
+                $startup->likes = $startup->likes + 1;
+                $startup->save();
             }
 
-            $startup->users()->attach(Auth::id());
-            $startup->likes = $startup->likes+1;
-            $startup->save();
+            return $startup->likes;
+        } else {
+            return $startup->likes;
         }
-
-        return $startup->likes;
     }
 
     public function favoriteStartups()
     {
-        dd(Auth::user()->favoriteStartups());
-        return Auth::user()->favoriteStartups;
+        return response()->json(Auth::user()->favoriteStartups, 201);
     }
+
+    public function topStartups()
+    {
+        return response()->json(Startup::latest()->get(), 201);
+    }
+
 
     public function storeComment(Request $request, $id)
     {

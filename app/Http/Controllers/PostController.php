@@ -19,7 +19,6 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-
         return view('post.index', compact('posts'));
     }
 
@@ -49,6 +48,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+//        dd($request);
         $this->validate($request,[
             'title' => 'required|max:30',
             'body' => 'required|max:1000',
@@ -69,6 +70,7 @@ class PostController extends Controller
         $post->creator_id = Auth::id();
         $post->image = $imageName;
         $post->save();
+//        dd($request->tags);
         foreach ($request->tags as $tag)
         {
             $post->tags()->attach($tag);
