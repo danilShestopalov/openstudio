@@ -1,9 +1,9 @@
 <template>
 
     <div class="arts" >
-        <div v-for="post in posts"  :style="{ backgroundImage: 'url(' + '/uploads/posts/' + post.image + ')' }">
+        <div v-for="post in posts"  :style="{ backgroundImage: 'linear-gradient(360deg, rgba(0, 0, 0, 0.65) 0%, rgba(255, 255, 255, 0) 100%), url(' + '/uploads/posts/' + post.image + ')' }">
             <h1>{{ post.title }}</h1>
-            <p>{{ previewBody(post.body) }}</p>
+            <!--<p>{{ previewBody(post.body) }}</p>-->
         </div>
     </div>
 </template>
@@ -56,5 +56,10 @@
 
 
 <style>
-
+   .arts div{
+       padding: 10px;
+       /*filter: blur(20px);*/
+       /*backdrop-filter: blur(4px);*/
+       /*background-color: rgba(255, 255, 255, 0.5);*/
+   }
 </style>

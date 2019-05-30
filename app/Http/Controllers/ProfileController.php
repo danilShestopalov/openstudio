@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProfileProfession;
+use App\Models\Profession;
 use App\Models\ProfileSkill;
 use App\Profile;
 use App\Startup;
 use Illuminate\Http\Request;
 use App\Jobs\ProcessImageThumbnails;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 
 class ProfileController extends Controller
@@ -22,146 +23,127 @@ class ProfileController extends Controller
     public function index()
     {
         $profiles = Profile::all();
-//        return response()->json($profiles, 201);
         return view('profile.index', compact('profiles'));
     }
 
-    public function apiProfiles()
+
+     public function create()
     {
-        $profiles = Profile::all();
-        return response()->json($profiles, 201);
+        if(Auth::user()->profile){
+            return redirect(route('profile.show', Auth::user()->profile->id));
+        } else {
+            return view('profile.create');
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('profile.create');
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-//        $this->validate($request,[
-//            'nickname'=> 'required|unique:profiles,nickname',
-//            'about'=>'required',
-//            'contacts' => 'required',
-//            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-//            'background' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-//
-//        ]);
+        if(Auth::user()->profile){
+            return redirect(route('profile.show', Auth::user()->profile->id));
+        } else {
+            $this->validate($request, [
+                'nickname' => 'required|unique:profiles',
+                'about' => 'required',
+                'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'background' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
 
-        if ($request->hasFile('avatar')) {
-            $avatar = time().'.'.$request->avatar->getClientOriginalExtension();
-            $request->avatar->move(public_path('uploads/profile/avatar'), $avatar);
-        }
+            if ($request->hasFile('avatar')) {
+                $avatar = time() . '.' . $request->avatar->getClientOriginalExtension();
+                $request->avatar->move(public_path('uploads/profile/avatar'), $avatar);
+            }
 
-        if ($request->hasFile('background')) {
-            $background = time().'.'.$request->background->getClientOriginalExtension();
-            $request->background->move(public_path('uploads/profile/background/'), $background);
-        }
+            if ($request->hasFile('background')) {
+                $background = time() . '.' . $request->background->getClientOriginalExtension();
+                $request->background->move(public_path('uploads/profile/background/'), $background);
+            }
 
-        $profile = Profile::create([
-            'nickname' => $request->nickname,
-            'contacts' => $request->contacts,
-            'about' => $request->about,
-            'avatar' => $avatar,
-            'background' => $background,
-            'user_id' => Auth::id(),
-        ]);
-        dd($profile);
-        foreach ($request->skills as $skill)
-        {
-            $profile->skills()->attach($skill);
-        }
+            $profile = Profile::create([
+                'nickname' => $request->nickname,
+                'about' => $request->about,
+                'avatar' => $avatar,
+                'background' => $background,
+                'user_id' => Auth::id(),
+            ]);
 
-        foreach ($request->professions as $profession)
-        {
-            $profile->professions()->attach($profession);
+            foreach ($request->skills as $skill) {
+                $profile->skills()->attach($skill);
+            }
+
+//            foreach ($request->professions as $profession) {
+//                $profile->professions()->attach($profession);
+//            }
+
+            return redirect(route('profile.show', $profile->id));
         }
-dd($profile->skills);
-        return redirect(route('profile.show', $profile->id));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Profile  $profile
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
+
+    public function show($id)
     {
-        $profile = Auth::user()->profile;
-        $startups = Startup::where('creater_id', Auth::id())->get();
-        return view('profile.show', compact('profile', 'startups'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Profile  $profile
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Profile $profile)
-    {
-        return view('profile.edit', compact('profile'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Profile  $profile
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Profile $profile)
-    {
-        $this->validate($request,[
-            'firstname'=> 'required',
-            'lastname'=>'required',
-            'info'=>'required',
-//            'user_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-        if ($request->hasFile('user_image')) {
-            $imageName = time().'.'.$request->user_image->getClientOriginalExtension();
-            $request->user_image->move(public_path('uploads/profile/'), $imageName);
+        $profile = Profile::findOrFail($id);
+        if(!$profile){
+            return redirect(route('profile.create'));
         }
-
-        $profile->updateProfile($request);
-
-//        return response()->json($request, 200);
-        return redirect('/profile');
+        //$startups = Startup::where('creater_id', Auth::id())->get();
+        return view('profile.show', compact('profile'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Profile  $profile
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Profile $profile)
-    {
-        $profile->delete();
-        return response()->json($profile, 204);
-//        return redirect('/profile');
-    }
+
 
     public function skills()
     {
         return response()->json(ProfileSkill::all(), 200);
     }
 
-    public function professions()
+    public function profileSkills($id)
     {
-        return response()->json(ProfileProfession::all(), 200);
+        return response()->json(Profile::find($id)->skills, 200);
+    }
+
+    public function showProfile($id)
+    {
+
+        $profile = Profile::findOrFail($id);
+        $startups = Auth::user()->myStartups;
+
+        return view('profile.show_profile', compact('profile', 'startups'));
+    }
+
+
+    public function like(Request $request, $id)
+    {
+        $user = Profile::find($id)->user;
+        $startup = Startup::find($request->id)->first();
+        $profile_len = count(Profile::all());
+
+        if ($startup->users != null) {
+            foreach ($startup->users as $profile) {
+                if (Auth::id() == $profile->id) {
+                    if($profile_len - $id = 0){
+                        return redirect(route('startup.index'));
+                    }
+                    return redirect(route('profile.showProfile', $profile_len - $id + 1));
+                }
+            }
+                $to_email = $user->email;
+                $to_name = 'Юсер';
+                $data = array('url' => 'http://openstudio.kz/startup/'.$request->id);
+
+                Mail::send('emails.join_profile', $data, function($message) use ($to_name, $to_email) {
+                    $message->to($to_email, $to_name)
+                        ->subject('Вашим профилем заинтересовались');
+                    $message->from('openstudio.kz@gmail.com','Openstudio');
+                });
+
+                $startup->users()->attach($user->id);
+
+            }
+            if($profile_len - $id < 0){
+                return redirect(route('startup.index'));
+            }
+            return redirect(route('profile.showProfile', $profile_len - $id + 1));
+
     }
 }

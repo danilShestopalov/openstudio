@@ -48,11 +48,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
-//        dd($request);
         $this->validate($request,[
             'title' => 'required|max:30',
-            'body' => 'required|max:1000',
+            'body' => 'required',
             'image' => 'required',
         ]);
 
@@ -71,10 +69,10 @@ class PostController extends Controller
         $post->image = $imageName;
         $post->save();
 //        dd($request->tags);
-        foreach ($request->tags as $tag)
-        {
-            $post->tags()->attach($tag);
-        }
+//        foreach ($request->tags as $tag)
+//        {
+//            $post->tags()->attach($tag);
+//        }
 
         return redirect(route('post.show', $post->id));
     }
@@ -104,12 +102,11 @@ class PostController extends Controller
             'comment' => 'required|max:155'
         ]);
 
-        PostComment::create([
+        $comment = PostComment::create([
             'comment' => $request->comment,
             'creator_id' => Auth::id(),
             'post_id' => $id
         ]);
-
         return redirect()->back();
     }
 }

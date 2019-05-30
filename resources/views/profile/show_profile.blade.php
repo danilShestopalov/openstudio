@@ -1,13 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="prof" style="background: url('/uploads/profile/background/{{ $profile->background }}')">
+    <section class="prof" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/uploads/profile/background/{{ $profile->background }}')">
         <img src="/uploads/profile/avatar/{{ $profile->avatar }}" alt="">
-        <form class="profinfo" action="{{ route('profile.like', $profile->id) }}" method="post">
-            @csrf
+
             <h1>{{ '@'.$profile->nickname }}</h1>
-            <button>Отправить запрос</button>
-        </form>
+
     </section>
     <section class="under">
         <div class="sometext">
@@ -22,93 +20,27 @@
                 @endforeach
             </div>
         </div>
+        @if(!empty($startups))
         <div class="block2">
             <ul>
+                @foreach($startups as $startup)
                 <li>
-                    <img src="img/fuck.png" alt="">
+                    <img src="/uploads/startup/logo/{{ $startup->logo }}" width="100px" height="100px" alt="">
                     <div class="div1">
-                        <h1>Lorem, ipsum.</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button>More</button>
+                        <h1>{{ $startup->title }}</h1>
+                        <p>{{ $startup->tagline }}</p>
                     </div>
-                    <a href="2ch.hk" class="div2">
-                        <span>55</span>
-                        <img src="img/poly.png" alt="">
-                    </a>
+                    <form class="sendoffer" action="{{ route('profile.like', $profile->id) }}" method="post">
+                        @csrf
+                        <input hidden name="startup_id" value="{{ $startup->id }}">
+                        <button>Отправить предложение</button>
+                    </form>
                 </li>
-                <li>
-                    <img src="img/fuck.png" alt="">
-                    <div class="div1">
-                        <h1>Lorem, ipsum.</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button>Подробнее</button>
-                    </div>
-                    <div class="div2">
-                        <span>55</span>
-                        <img src="img/poly.png" alt="">
-                    </div>
-                </li>
-                <li>
-                    <img src="img/fuck.png" alt="">
-                    <div class="div1">
-                        <h1>Lorem, ipsum.</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button>Подробнее</button>
-                    </div>
-                    <div class="div2">
-                        <span>55</span>
-                        <img src="img/poly.png" alt="">
-                    </div>
-                </li>
-                <li>
-                    <img src="img/fuck.png" alt="">
-                    <div class="div1">
-                        <h1>Lorem, ipsum.</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button>Подробнее</button>
-                    </div>
-                    <div class="div2">
-                        <span>55</span>
-                        <img src="img/poly.png" alt="">
-                    </div>
-                </li>
-                <li>
-                    <img src="img/fuck.png" alt="">
-                    <div class="div1">
-                        <h1>Lorem, ipsum.</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button>Подробнее</button>
-                    </div>
-                    <div class="div2">
-                        <span>55</span>
-                        <img src="img/poly.png" alt="">
-                    </div>
-                </li>
-                <li>
-                    <img src="img/fuck.png" alt="">
-                    <div class="div1">
-                        <h1>Lorem, ipsum.</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button>Подробнее</button>
-                    </div>
-                    <div class="div2">
-                        <span>55</span>
-                        <img src="img/poly.png" alt="">
-                    </div>
-                </li>
-                <li>
-                    <img src="img/fuck.png" alt="">
-                    <div class="div1">
-                        <h1>Lorem, ipsum.</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button>Подробнее</button>
-                    </div>
-                    <div class="div2">
-                        <span>55</span>
-                        <img src="img/poly.png" alt="">
-                    </div>
-                </li>
+                @endforeach
             </ul>
         </div>
+        @else
+            <h2>Создайте стартап</h2>
+        @endif
     </section>
 @endsection

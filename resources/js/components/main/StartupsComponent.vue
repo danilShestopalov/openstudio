@@ -2,15 +2,15 @@
         <ul>
             <li v-for="startup in startups">
                 <img class="logo" :src="'/uploads/startup/logo/'+ startup.logo" width="108px" height="108px"  alt="">
-                <div class="div1">
+                <form class="div1" :action="'/startup/' + startup.id">
                     <h1>{{ startup.title }}</h1>
-                    <p>{{ previewBody(startup.info) }}</p>
+                    <p>{{ startup.tagline }}</p>
                     <button>More</button>
-                </div>
-                <a class="div2" @click="putLike(startup.id)">
-                    <span>{{ startup.likes }}</span>
-                    <img src="/img/poly.png" alt="">
-                </a>
+                </form>
+                <!--<a class="div2" @click="putLike(startup.id)">-->
+                    <!--<span>{{ startup.likes }}</span>-->
+                    <!--<img src="/img/poly.png" alt="">-->
+                <!--</a>-->
             </li>
         </ul>
 </template>
@@ -18,6 +18,9 @@
 
 <script>
     export default {
+        props: {
+            url: String,
+        },
         data: function() {
             return {
                 startups: [],
@@ -31,7 +34,7 @@
         },
         methods: {
             update: function() {
-                axios.get('/api/startups/top').then((response) => {
+                axios.get(this.url).then((response) => {
                     this.startups = response.data;
                 });
             },

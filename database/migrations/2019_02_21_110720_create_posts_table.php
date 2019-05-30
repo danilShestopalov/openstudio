@@ -17,12 +17,12 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
-            $table->boolean('status')->default(0);
             $table->string('image');
-            $table->integer('creator_id')->unsigned();
-            $table->foreign('creator_id')
+            $table->integer('rating')->default(0);
+            $table->integer('startup_id')->unsigned();
+            $table->foreign('startup_id')
                 ->references('id')
-                ->on('users')
+                ->on('startups')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();

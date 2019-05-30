@@ -69,10 +69,10 @@
     .tags{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr ;
+        grid-template-rows: 1fr;
         /*grid-area: ;*/
         grid-gap: 10px;
-        padding: 2% 5%;
+        padding: 2% 0;
     }
     .tags li{
         background: #FFFFFF;

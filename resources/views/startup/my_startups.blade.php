@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="mainstartup">
-        <h1 class="mainstartuptitle"><b>Lorem ipsum dolor sit amet.</b> Lorem ipsum dolor sit amet.</h1>
-    <startup-list-component></startup-list-component>
+        <a class="mainstartuptitle" href="{{ route('startup.create') }}">Put your idea<b> into a startup</b></a>
+        <startup-list-component url="/api/startups/my"></startup-list-component>
+	
     </div>
 @endsection

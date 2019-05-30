@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\IComment;
 use App\Profile;
+use App\Startup;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'provider', 'provider_id'
     ];
 
     /**
@@ -50,9 +51,15 @@ class User extends Authenticatable
         return in_array($check, array_pluck($this->roles->toArray(), 'name'));
     }
 
-    public function favoriteStartups()
+    public function startups()
     {
         return $this->belongsToMany('App\Startup', 'startup_user',
             'user_id', 'startup_id');
     }
+    public function myStartups()
+    {
+        return $this->hasMany(Startup::class, 'creater_id');
+    }
+
+
 }

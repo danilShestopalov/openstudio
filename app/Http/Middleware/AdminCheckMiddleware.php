@@ -14,12 +14,12 @@ class AdminCheckMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $role)
+    public function handle($request, Closure $next)
     {
-        if(!Auth::user()->hasRole($role))
+        if(Auth::user()->status == 1)
         {
-            return redirect()->back();
+            return $next($request);
         }
-        return $next($request);
+        return redirect(route('payment'));
     }
 }

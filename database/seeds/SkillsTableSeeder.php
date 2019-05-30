@@ -13,34 +13,37 @@ class SkillsTableSeeder extends Seeder
     public function run()
     {
         \Illuminate\Support\Facades\DB::table('skills')->insert([
-            'name' => 'Python',
+            'name' => 'Дизайн',
         ]);
         \Illuminate\Support\Facades\DB::table('skills')->insert([
-            'name' => 'PHP',
+            'name' => 'Веб-разработка',
         ]);
         \Illuminate\Support\Facades\DB::table('skills')->insert([
-            'name' => 'C++',
+            'name' => 'IOS разработчик',
         ]);
         \Illuminate\Support\Facades\DB::table('skills')->insert([
-            'name' => 'Arduino',
+            'name' => 'Android разработчик',
         ]);
         \Illuminate\Support\Facades\DB::table('skills')->insert([
-            'name' => 'Java',
+            'name' => 'Робототехника',
         ]);
         \Illuminate\Support\Facades\DB::table('skills')->insert([
-            'name' => 'Javascript',
+            'name' => 'Маркетолог',
         ]);
         \Illuminate\Support\Facades\DB::table('skills')->insert([
-            'name' => 'UI',
+            'name' => 'Project manager',
         ]);
         \Illuminate\Support\Facades\DB::table('skills')->insert([
-            'name' => 'UX',
+            'name' => 'Product Manager',
         ]);
         \Illuminate\Support\Facades\DB::table('skills')->insert([
-            'name' => 'IOS',
+            'name' => 'Экономист',
         ]);
         \Illuminate\Support\Facades\DB::table('skills')->insert([
-            'name' => 'Android',
+            'name' => 'Продажник',
+        ]);
+        \Illuminate\Support\Facades\DB::table('skills')->insert([
+            'name' => 'Гений',
         ]);
     }
 }

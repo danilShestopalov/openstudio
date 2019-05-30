@@ -28,6 +28,8 @@ Vue.component('main-startup-list-component', require('./components/main/Startups
 Vue.component('startup-list-component', require('./components/StartupsComponent.vue').default);
 Vue.component('main-post-list-component', require('./components/main/PostsComponent.vue').default);
 Vue.component('select-tags-component', require('./components/SelectTagsComponent.vue').default);
+Vue.component('profile-component', require('./components/ProfileComponent.vue').default);
+Vue.component('upload-file-component', require('./components/UploadFileComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -1,38 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="blog">
-        <div class="bloginfo">
-            <h1 class="blueh1">BLOG</h1>
-            <button>Publish</button>
-        <div class="mainpost">
-            <h1>{{ $posts[0]->title }}</h1>
-            <p>{{ $posts[0]->tagline }}</p>
+    <div class="mainstartup">
+        <h1 class="mainstartuptitle"><b>Lorem ipsum dolor sit amet.</b> Lorem ipsum dolor sit amet.</h1>
+        <div class="mainstartuppost">
+            @foreach($posts as $post)
+                <a class="onepost postindex" href="{{ route('post.show', $post->id) }}" style="background: linear-gradient(360deg, rgba(0, 0, 0, 0.65) 0%, rgba(255, 255, 255, 0) 100%), url('/uploads/posts/{{ $post->image }}') ">
+                    {{--<img src="/uploads/profile/{{ $post->image }}" alt="">--}}
+                    <div class="fr2" style="grid-template-columns: none;">
+                            <h1>{{ $post->title }}</h1>
+                            {{--<p>{{ $post->tagline }}</p>--}}
+                    </div>
+                </a>
+            @endforeach
         </div>
-        <div class="three">
-            <div>
-                <h1>{{ $posts[1]->title }}</h1>
-                <p>{{ $posts[1]->tagline }}</p>
-            </div>
-            <div>
-                <h1>{{ $posts[2]->title }}</h1>
-                <p>{{ $posts[2]->tagline }}</p>
-            </div>
-            <div>
-                <h1>{{ $posts[3]->title }}</h1>
-                <p>{{ $posts[3]->tagline }}</p>
-            </div>
-        </div>
-        <div class="two">
-            <div>
-                <h1>{{ $posts[4]->title }}</h1>
-                <p>{{ $posts[4]->tagline }}</p>
-            </div>
-            <div>
-                <h1>{{ $posts[5]->title }}</h1>
-                <p>{{ $posts[5]->tagline }}</p>
-            </div>
-        </div>
-        <button class="moreposts">More</button>
-    </section>
+    </div>
 @endsection

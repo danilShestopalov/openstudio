@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
@@ -12,10 +13,9 @@ class Profile extends Model
         'nickname', 'avatar', 'user_id', 'contacts', 'about', 'background',
     ];
 
-    public function startups()
+    public function user()
     {
-        return $this->belongsToMany('App\Profile', 'startup_profile',
-            'profile_id','startup_id');
+        return $this->belongsTo(User::class);
     }
 
     public function skills()
@@ -25,6 +25,6 @@ class Profile extends Model
 
     public function professions()
     {
-        return $this->belongsToMany('App\Models\ProfileProfession', 'profile_profession', 'profile_id', 'profession_id');
+        return $this->belongsToMany('App\Models\Profession', 'profile_profession', 'profile_id', 'profession_id');
     }
 }

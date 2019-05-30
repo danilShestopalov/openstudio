@@ -16,8 +16,8 @@ class StartupComment extends Model
         return $this->belongsTo(Startup::class);
     }
 
-    public function users()
+    public function creator()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasOne(User::class, 'id', 'creator_id');
     }
 }
