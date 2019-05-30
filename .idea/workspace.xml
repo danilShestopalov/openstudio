@@ -2,138 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31db5f68-60ed-4297-b83e-4c29da4298aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/OpenStudio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OpenStudio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StartupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StartupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AdminCheckMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AdminCheckMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Profession.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profession.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Startup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Startup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/StartupComment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/StartupComment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_17_112925_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_17_112925_create_profiles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_17_112935_create_startups_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_17_112935_create_startups_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_21_110720_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_02_21_110720_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SkillsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SkillsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/imageone1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1552903487.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1552914773.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1552972549.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1552972614.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1552972666.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1553678349.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1553678372.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1553846350.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1553846362.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1554379624.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1554379896.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1554379945.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1554379957.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1554379969.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1554379985.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1554379995.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1554380002.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/posts/1554380010.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/avatar/1554551739.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/avatar/1554552122.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/avatar/1554552219.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/avatar/1554614052.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/avatar/1554614242.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/avatar/1554614312.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/background/1554551739.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/background/1554552122.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/background/1554552219.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/background/1554614052.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/background/1554614242.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profile/background/1554614312.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552652646.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552652651.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552652996.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552654211.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552887159.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552888470.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552888532.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552888570.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552895298.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552970967.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552972912.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1552972952.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553062318.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553062376.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553590772.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553600849.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553600902.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553600947.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553600960.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553601006.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553610220.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553610231.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553610241.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553612382.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553612385.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1553612387.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1554092212.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1554092221.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1554092223.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1554092225.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1554117616.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1554117619.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1554117620.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1554117621.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1554117622.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1554117623.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/startup/logo/1554117624.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ProfileComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ProfileComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/SelectTagsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/SelectTagsComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/StartupsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/StartupsComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/UploadFileComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/UploadFileComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/main/PostsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/main/PostsComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/main/StartupsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/main/StartupsComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/crowdfunding/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/crowdfunding/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/join_profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/join_profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/payment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/show_profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/show_profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/startup/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/startup/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/startup/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/startup/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/startup/my_startups.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/startup/my_startups.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/startup/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/startup/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -759,12 +628,12 @@
       <workItem from="1555272390828" duration="35412000" />
       <workItem from="1557566782264" duration="4986000" />
       <workItem from="1557908853243" duration="13024000" />
-      <workItem from="1558356499074" duration="11694000" />
+      <workItem from="1558356499074" duration="12532000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="406061000" />
+    <option name="totallyTimeSpent" value="406899000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -777,7 +646,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" sideWeight="0.50177306" side_tool="true" weight="0.20457797" />
